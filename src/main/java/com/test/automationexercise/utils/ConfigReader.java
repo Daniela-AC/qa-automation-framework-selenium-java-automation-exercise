@@ -21,6 +21,14 @@ public class ConfigReader {
     }
 
     public String getBaseUrl () {
-        return properties.getProperty("BASEURL");
+        return properties.getProperty("base_url");
+    }
+
+    public String getBrowser () {
+        return properties.getProperty("browser");
+    }
+
+    public boolean isHeadless () {
+        return Boolean.parseBoolean(properties.getProperty("headless"));
     }
 }

@@ -10,7 +10,7 @@ import com.test.automationexercise.utils.ConfigReader;
 public class BaseTest {
 
     protected WebDriver driver;
-    private ConfigReader config = new ConfigReader();
+    private final ConfigReader config = new ConfigReader();
 
     @BeforeEach
     public void setUp() {
@@ -25,7 +25,12 @@ public class BaseTest {
 
     private ChromeOptions getChromeOptions() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--start-maximized", "--incognito", "--disable-popup-blocking");
+        options.addArguments("--start-maximized", "--incognito", "--disable-popup-blocking", "--disable-notifications");
+
+        if (config.isHeadless()) {
+            options.addArguments("--headless=new");
+        }
+
         return options;
     }
 }

@@ -20,25 +20,32 @@ and dynamic test data generation.
 ```
 src
 ├── main
-│ └── java
-│ └── com.test.automationexercise
-│ ├── pages
-│ │ └── base
-│ ├── utils
-│ │ └── data
+│   ├── java
+│       ├── com.test.automationexercise
+│           ├── pages
+│               └── base
+│           └── utils
+│               └── data
 ├── test
-│ └── java
-│ ├── base
-│ └── tests
+│   └── java
+│       ├── base
+│       └── tests
+│   └── resources
+│       ├── config
+│       └── files
+
+
 ```
 
 ## ✅ Test Scenarios
 ### Positive
 - User can sign up successfully
 - User can log in with valid credentials
+- Successful purchase
+- Sending contact form successfully
 
 ### Negative
-- Login with wrong credentials
+- Log in with wrong credentials
 - Sign up with existing email
 
 ## 📌 Notes
