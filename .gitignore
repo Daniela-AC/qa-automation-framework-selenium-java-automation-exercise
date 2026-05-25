@@ -1,0 +1,16 @@
+# IntelliJ
+.idea/
+*.iml
+
+# Build
+/build/
+/out/
+
+# Gradle
+.gradle/
+
+# OS
+.DS_Store
+Thumbs.db
+
+src/main/java/com/test/automationexercise/utils/data/TestCredentials.java
