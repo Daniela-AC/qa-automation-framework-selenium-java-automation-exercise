@@ -1,6 +1,6 @@
-package tests;
+package com.test.automationexercise.tests;
 
-import base.BaseTest;
+import com.test.automationexercise.base.BaseTest;
 import com.test.automationexercise.pages.ContactPage;
 import com.test.automationexercise.pages.HomePage;
 import com.test.automationexercise.pages.LoginPage;
@@ -27,14 +27,18 @@ public class ContactTest extends BaseTest {
 
     @Test
     public void testSendContactFormSuccessfully() {
+        test.info("Starting contact form test");
+
         homePage.goToLoginPage();
         loginPage.logIn(TestCredentials.VALID_EMAIL, TestCredentials.CORRECT_PASSWORD);
         userPage.goToContactTab();
 
+        test.info("Filling up the contact form");
         contactPage.fillInContactMessage();
         contactPage.uploadDocument();
         contactPage.submitMessageAndAcceptAlert();
 
+        test.info("Validating contact form submission");
         Assertions.assertEquals("Success! Your details have been submitted successfully.", contactPage.getSuccessfulContactMessage());
     }
 }

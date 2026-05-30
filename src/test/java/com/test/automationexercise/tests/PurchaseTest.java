@@ -1,8 +1,7 @@
-package tests;
+package com.test.automationexercise.tests;
 
-import base.BaseTest;
+import com.test.automationexercise.base.BaseTest;
 import com.test.automationexercise.pages.*;
-import com.test.automationexercise.utils.PurchaseService;
 import com.test.automationexercise.utils.data.TestCredentials;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,7 +15,6 @@ public class PurchaseTest extends BaseTest {
     ProductsPage productsPage;
     CartPage cartPage;
     CheckoutPage checkoutPage;
-    PurchaseService purchaseService;
     PaymentPage paymentPage;
     OrderPlacedPage orderPlacedPage;
 
@@ -28,27 +26,33 @@ public class PurchaseTest extends BaseTest {
         productsPage = new ProductsPage(driver);
         cartPage = new CartPage(driver);
         checkoutPage = new CheckoutPage(driver);
-        purchaseService = new PurchaseService(productsPage);
         paymentPage = new PaymentPage(driver);
         orderPlacedPage = new OrderPlacedPage(driver);
     }
 
     @Test
     public void testSuccessfulPurchase() {
+        test.info("Starting purchase test");
+
         homePage.goToLoginPage();
         loginPage.logIn(TestCredentials.VALID_EMAIL, TestCredentials.CORRECT_PASSWORD);
         userPage.goToProductsTab();
 
+        test.info("Adding products to cart and proceeding to checkout");
         productsPage.addProductToTheCart();
         userPage.goToCartTab();
         cartPage.goToCheckoutPage();
 
-        Assertions.assertEquals(checkoutPage.getTotalCost(), purchaseService.getExpectedTotal());
+        test.info("Validating cart total against expected total");
+        Assertions.assertEquals(checkoutPage.getTotalCost(), productsPage.getExpectedTotal());
 
         checkoutPage.placeOrder();
+
+        test.info("Filling payment information");
         paymentPage.fillPayment(TestCredentials.NAME_ON_CARD, TestCredentials.CARD_NUMBER, TestCredentials.CVC, TestCredentials.EXPIRATION_MONTH, TestCredentials.EXPIRATION_YEAR);
         paymentPage.payAndConfirmOrder();
 
+        test.info("Validating order placed successfully");
         Assertions.assertEquals("ORDER PLACED!", orderPlacedPage.getOrderPlacedText());
     }
 }

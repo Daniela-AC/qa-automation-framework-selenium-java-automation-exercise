@@ -36,7 +36,13 @@ public class ProductsPage extends BasePage {
         prices.add(getProductPrice(locator));
     }
 
-    public List<Integer> getPrices() {
-        return prices;
+    public int getExpectedTotal() {
+        int sum = 0;
+
+        for (int price : prices) {
+            sum += price;
+        }
+        return sum;
     }
+
 }

@@ -1,4 +1,4 @@
-package com.test.automationexercise.utils;
+package com.test.automationexercise.utils.config;
 
 import java.io.InputStream;
 import java.util.Properties;
@@ -10,7 +10,7 @@ public class ConfigReader {
     public ConfigReader() {
         properties = new Properties();
         try {
-            InputStream file = getClass().getClassLoader().getResourceAsStream("config/config.properties");
+            InputStream file = getClass().getClassLoader().getResourceAsStream("config.properties");
             if (file == null) {
                 throw new RuntimeException("Config file not found");
             }

@@ -1,6 +1,6 @@
-package tests;
+package com.test.automationexercise.tests;
 
-import base.BaseTest;
+import com.test.automationexercise.base.BaseTest;
 import com.test.automationexercise.pages.AccountCreatedPage;
 import com.test.automationexercise.utils.data.TestCredentials;
 import com.test.automationexercise.utils.data.TestDataFactory;
@@ -31,20 +31,28 @@ public class SignUpTest extends BaseTest {
     public void testCreateAccount() {
         UserData userData = TestDataFactory.createValidUser();
 
+        test.info("Starting account creation test");
+
         homePage.goToLoginPage();
         login.startSigningUp(userData.firstName, userData.email);
 
+        test.info("Filling account and address information");
         informationPage.fillInAccountInformation(userData);
         informationPage.fillInAddressInformation(userData);
         informationPage.clickCreateAccountButton();
 
+        test.info("Validating successful account creation");
         Assertions.assertEquals("ACCOUNT CREATED!", accountCreatedPage.getAccountCreatedMessage());
     }
 
     @Test
     public void testSignUpWithExistingEmail() {
+        test.info("Starting sign-up test with existing email");
+
         homePage.goToLoginPage();
         login.startSigningUp(TestCredentials.NAME, TestCredentials.VALID_EMAIL);
+
+        test.info("Validating existing email address message");
         Assertions.assertEquals("Email Address already exist!", login.getEmailExistMessage());
     }
 }
