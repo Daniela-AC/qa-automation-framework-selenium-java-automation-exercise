@@ -3,10 +3,16 @@ package com.test.automationexercise.reports;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import java.io.File;
 
 public class ExtentManager {
 
     public static ExtentReports extent;
+    private static WebDriver driver;
 
     public static ExtentReports getReportInstance() {
         if (extent == null) {
@@ -25,6 +31,7 @@ public class ExtentManager {
             extent.setSystemInfo("Project", "QA Automation Framework");
             extent.setSystemInfo("Browser", "Chrome");
             extent.setSystemInfo("Tester", "Daniela AC");
+
         }
         return extent;
     }

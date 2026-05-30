@@ -13,6 +13,7 @@ public class TestListener implements TestWatcher {
 
     @Override
     public void testFailed(ExtensionContext context, Throwable cause) {
+        BaseTest.testFailed = true;
         BaseTest.test.fail("Failure message: " + cause.getMessage());
     }
 }
