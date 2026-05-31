@@ -38,10 +38,12 @@ public class BaseTest {
     @AfterEach
     public void tearDown(TestInfo testInfo) {
         if (testFailed) {
+            System.out.println("Taking screenshot...");
             String screenshotPath = ScreenshotUtils.captureScreenshot(driver, testInfo.getDisplayName());
 
             try {
                 test.addScreenCaptureFromPath(screenshotPath);
+                System.out.println("screenshot taken...");
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -15,15 +15,17 @@ public class ScreenshotUtils {
 
         File sourceFile = ts.getScreenshotAs(OutputType.FILE);
 
-        File directory = new File("screenshots");
+        File directory = new File("test-output/screenshots");
 
         if (!directory.exists()) {
             directory.mkdirs();
         }
 
-        String path = "screenshots/" + fileName + ".png";
+        String folderPath = "test-output/screenshots/";
+        String filePath = folderPath + fileName + ".png";
+        String reportPath = "screenshots/" + fileName + ".png";
 
-        File destinationFile = new File(path);
+        File destinationFile = new File(filePath);
 
         try {
             FileUtils.copyFile(sourceFile, destinationFile);
@@ -32,6 +34,6 @@ public class ScreenshotUtils {
             throw new RuntimeException("Failed to save screenshot", e);
         }
 
-        return destinationFile.getAbsolutePath();
+        return reportPath;
     }
 }

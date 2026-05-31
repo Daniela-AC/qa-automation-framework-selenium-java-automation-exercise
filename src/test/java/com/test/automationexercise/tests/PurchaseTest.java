@@ -41,11 +41,11 @@ public class PurchaseTest extends BaseTest {
         test.info("Adding products to cart and proceeding to checkout");
         productsPage.addProductToTheCart();
         userPage.goToCartTab();
-        cartPage.goToCheckoutPage();
 
         test.info("Validating cart total against expected total");
         Assertions.assertEquals(checkoutPage.getTotalCost(), productsPage.getExpectedTotal());
 
+        cartPage.goToCheckoutPage();
         checkoutPage.placeOrder();
 
         test.info("Filling payment information");

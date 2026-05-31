@@ -2,18 +2,15 @@ package com.test.automationexercise.reports;
 
 import com.test.automationexercise.base.BaseTest;
 import org.junit.jupiter.api.extension.ExtensionContext;
+import org.junit.jupiter.api.extension.TestExecutionExceptionHandler;
 import org.junit.jupiter.api.extension.TestWatcher;
 
-public class TestListener implements TestWatcher {
+public class TestListener implements TestWatcher, TestExecutionExceptionHandler {
 
     @Override
-    public void testSuccessful(ExtensionContext context) {
-        BaseTest.test.pass("Test passed successfully");
-    }
-
-    @Override
-    public void testFailed(ExtensionContext context, Throwable cause) {
+    public void handleTestExecutionException(ExtensionContext context, Throwable throwable) throws Throwable {
         BaseTest.testFailed = true;
-        BaseTest.test.fail("Failure message: " + cause.getMessage());
+        BaseTest.test.fail("Failure message: " + throwable.getMessage());
+        throw throwable;
     }
 }
