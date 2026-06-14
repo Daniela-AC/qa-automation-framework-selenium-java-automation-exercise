@@ -3,7 +3,7 @@
 Automation framework built using Selenium WebDriver with Java. Implements Page Object Model (POM), reusable utilities,
 and dynamic test data generation.
 
-## 🚀 Technologies
+## 🛠️ Technologies
 - Java
 - Selenium WebDriver
 - JUNit
@@ -72,6 +72,28 @@ The framework uses ExtentReports for test execution reporting.
 - A screenshot is automatically captured.
 - The screenshot is attached to the ExtentReport.
 - The failure message is logged in the report.
+
+## 🚀 How to Run
+### Prerequisites
+- Java 21
+- Google Chrome
+- Gradle
+
+### Clone the Repository
+```git clone https://github.com/Daniela-AC/qa-automation-framework-selenium-java.git```
+
+```cd qa-automation-framework-selenium-java```
+
+### Run All Tests
+```/gradlew test```
+
+### Run a Specific Test Class
+```/gradlew test --tests LoginTest```
+
+### Test Reports
+The ExtentReport is automatically generated after test execution and can be found at:
+
+test-output/TestReport.html
 
 ## 📌 Notes
 This project is part of my transition from manual QA to automation, focusing on building scalable and maintainable test
