@@ -1,5 +1,6 @@
 package com.test.automationexercise.utils;
 
+import com.test.automationexercise.utils.drivers.DriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,7 +12,7 @@ import java.time.Duration;
 
 public class WaitUtils {
 
-    private WebDriver driver;
+    private WebDriver driver = DriverFactory.getDriver();
     private WebDriverWait wait;
 
     public WaitUtils(WebDriver driver) {

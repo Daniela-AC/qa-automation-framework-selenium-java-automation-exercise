@@ -5,9 +5,11 @@ import com.test.automationexercise.pages.HomePage;
 import com.test.automationexercise.pages.LoginPage;
 import com.test.automationexercise.pages.UserPage;
 import com.test.automationexercise.utils.data.TestCredentials;
+import com.test.automationexercise.utils.drivers.DriverFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.WebDriver;
 
 public class LoginTest extends BaseTest {
 
@@ -17,6 +19,8 @@ public class LoginTest extends BaseTest {
 
     @BeforeEach
     public void initPages() {
+        WebDriver driver = DriverFactory.getDriver();
+
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
         userPage = new UserPage(driver);

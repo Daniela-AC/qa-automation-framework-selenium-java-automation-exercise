@@ -11,18 +11,32 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverFactory {
 
+    private static WebDriver driver;
     private final ConfigReader config = new ConfigReader();
 
     public WebDriver createDriver() {
 
         String browser = config.getBrowser().toLowerCase();
 
-        return switch (browser) {
+        driver = switch (browser) {
             case "chrome" -> new ChromeDriver(getChromeOptions());
             case "firefox" -> new FirefoxDriver(getFirefoxOptions());
             case "edge" -> new EdgeDriver(getEdgeOptions());
             default -> throw new IllegalArgumentException("Browser not supported: " + browser);
         };
+
+        return driver;
+    }
+
+    public static void quitDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+    }
+
+    public static WebDriver getDriver() {
+        return driver;
     }
 
     private ChromeOptions getChromeOptions() {

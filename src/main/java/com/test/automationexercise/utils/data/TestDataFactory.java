@@ -12,8 +12,6 @@ public class TestDataFactory {
         Faker faker = new Faker();
         UserData userData = new UserData();
 
-        //Test password, not real credential
-        userData.password = "Test123!";
         userData.day = "15";
         userData.month = "10";
         userData.year = "2000";
@@ -26,6 +24,7 @@ public class TestDataFactory {
         userData.zipcode = faker.address().zipCode();
         userData.mobileNumber = faker.phoneNumber().cellPhone();
         userData.email = faker.internet().emailAddress();
+        userData.password = faker.internet().password();
 
         return userData;
     }

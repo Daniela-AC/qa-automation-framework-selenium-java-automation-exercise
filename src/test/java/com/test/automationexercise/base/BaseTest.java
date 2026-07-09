@@ -15,9 +15,8 @@ import org.junit.jupiter.api.TestInfo;
 @ExtendWith(TestListener.class)
 public class BaseTest {
 
-    public static WebDriver driver;
-    private final ConfigReader config = new ConfigReader();
-    private final DriverFactory driverFactory = new DriverFactory();
+    protected final ConfigReader config = new ConfigReader();
+    protected final DriverFactory driverFactory = new DriverFactory();
     protected static ExtentReports report;
     public static ExtentTest test;
     public static boolean testFailed = false;
@@ -31,15 +30,15 @@ public class BaseTest {
     public void setUp(TestInfo testInfo) {
         test = report.createTest(testInfo.getDisplayName());
 
-        driver = driverFactory.createDriver();
-        driver.get(config.getBaseUrl());
+        driverFactory.createDriver();
+        driverFactory.getDriver().get(config.getBaseUrl());
     }
 
     @AfterEach
     public void tearDown(TestInfo testInfo) {
         if (testFailed) {
             System.out.println("Taking screenshot...");
-            String screenshotPath = ScreenshotUtils.captureScreenshot(driver, testInfo.getDisplayName());
+            String screenshotPath = ScreenshotUtils.captureScreenshot(driverFactory.getDriver(), testInfo.getDisplayName());
 
             try {
                 test.addScreenCaptureFromPath(screenshotPath);
@@ -48,9 +47,8 @@ public class BaseTest {
                 e.printStackTrace();
             }
         }
-        if (driver != null) {
-            driver.quit();
-        }
+
+        driverFactory.quitDriver();
 
         testFailed = false;
     }

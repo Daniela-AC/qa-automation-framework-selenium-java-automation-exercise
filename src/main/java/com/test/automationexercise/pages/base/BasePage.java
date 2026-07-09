@@ -1,6 +1,7 @@
 package com.test.automationexercise.pages.base;
 
 import com.test.automationexercise.utils.WaitUtils;
+import com.test.automationexercise.utils.drivers.DriverFactory;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -11,7 +12,7 @@ import java.util.List;
 
 public class BasePage {
 
-    protected WebDriver driver;
+    protected WebDriver driver = DriverFactory.getDriver();
     protected WaitUtils wait;
 
     protected BasePage(WebDriver driver) {

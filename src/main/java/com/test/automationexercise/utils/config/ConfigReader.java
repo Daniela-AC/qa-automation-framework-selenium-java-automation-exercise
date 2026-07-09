@@ -31,4 +31,5 @@ public class ConfigReader {
     public boolean isHeadless () {
         return Boolean.parseBoolean(properties.getProperty("headless"));
     }
+
 }
