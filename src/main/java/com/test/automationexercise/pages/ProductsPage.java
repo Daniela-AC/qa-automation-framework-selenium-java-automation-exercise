@@ -9,11 +9,11 @@ import java.util.List;
 
 public class ProductsPage extends BasePage {
 
-    private By blueTopProduct = By.xpath("//div[@id='cartModal']/following-sibling::div[1]");
-    private By addToCartButton = By.xpath("//a[@data-product-id=1]");
-    private By productPrice = By.xpath("//div[@id='cartModal']/following-sibling::div[1]//div[contains(@class, 'productinfo')]//h2");
-    private By continueShoppingButton = By.xpath("//div[@class='modal-footer']//button");
-    private List<Integer> prices = new ArrayList<>();
+    private final By blueTopProduct = By.xpath("//div[@id='cartModal']/following-sibling::div[1]");
+    private final By addToCartButton = By.xpath("//a[@data-product-id=1]");
+    private final By productPrice = By.xpath("//div[@id='cartModal']/following-sibling::div[1]//div[contains(@class, 'productinfo')]//h2");
+    private final By continueShoppingButton = By.xpath("//div[@class='modal-footer']//button");
+    private final List<Integer> prices = new ArrayList<>();
 
     public ProductsPage(WebDriver driver) {
         super(driver);

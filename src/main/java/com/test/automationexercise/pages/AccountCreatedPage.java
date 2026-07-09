@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class AccountCreatedPage extends BasePage {
 
-    private By accountCreatedTitle = By.xpath("//h2[@data-qa='account-created']");
+    private final By accountCreatedTitle = By.xpath("//h2[@data-qa='account-created']");
 
     public AccountCreatedPage(WebDriver driver) {
         super(driver);

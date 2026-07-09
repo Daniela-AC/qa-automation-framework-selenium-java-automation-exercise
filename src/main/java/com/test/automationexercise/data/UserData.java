@@ -1,4 +1,4 @@
-package com.test.automationexercise.utils.data;
+package com.test.automationexercise.data;
 
 public class UserData {
 

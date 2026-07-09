@@ -1,28 +1,28 @@
 package com.test.automationexercise.pages;
 
 import com.test.automationexercise.pages.base.BasePage;
-import com.test.automationexercise.utils.data.UserData;
+import com.test.automationexercise.data.UserData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class InformationPage extends BasePage {
+public class SignUpInformationPage extends BasePage {
 
-    private By femaleGender = By.id("id_gender2");
-    private By passwordInput = By.id("password");
-    private By daySelector = By.id("days");
-    private By monthSelector = By.id("months");
-    private By yearSelector = By.id("years");
-    private By firstNameInput = By.id("first_name");
-    private By lastNameInput = By.id("last_name");
-    private By addressInput = By.id("address1");
-    private By countrySelector = By.id("country");
-    private By stateInput = By.id("state");
-    private By cityInput = By.id("city");
-    private By zipcodeInput = By.id("zipcode");
-    private By mobileNumberInput = By.id("mobile_number");
-    private By createAccountButton = By.xpath("//button[@data-qa='create-account']");
+    private final By femaleGender = By.id("id_gender2");
+    private final By passwordInput = By.id("password");
+    private final By daySelector = By.id("days");
+    private final By monthSelector = By.id("months");
+    private final By yearSelector = By.id("years");
+    private final By firstNameInput = By.id("first_name");
+    private final By lastNameInput = By.id("last_name");
+    private final By addressInput = By.id("address1");
+    private final By countrySelector = By.id("country");
+    private final By stateInput = By.id("state");
+    private final By cityInput = By.id("city");
+    private final By zipcodeInput = By.id("zipcode");
+    private final By mobileNumberInput = By.id("mobile_number");
+    private final By createAccountButton = By.xpath("//button[@data-qa='create-account']");
 
-    public InformationPage(WebDriver driver) {
+    public SignUpInformationPage(WebDriver driver) {
         super(driver);
     }
 

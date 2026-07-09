@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class HomePage extends BasePage {
 
-    private By loginButton = By.xpath("//i[@class='fa fa-lock']");
+    private final By loginButton = By.xpath("//i[@class='fa fa-lock']");
 
     public HomePage(WebDriver driver) {
         super(driver);

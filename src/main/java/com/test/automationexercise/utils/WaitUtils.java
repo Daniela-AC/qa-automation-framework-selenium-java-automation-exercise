@@ -1,6 +1,6 @@
 package com.test.automationexercise.utils;
 
-import com.test.automationexercise.utils.drivers.DriverFactory;
+import com.test.automationexercise.drivers.DriverFactory;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

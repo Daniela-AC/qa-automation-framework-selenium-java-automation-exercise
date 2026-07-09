@@ -8,8 +8,8 @@ import java.util.List;
 
 public class CheckoutPage extends BasePage {
 
-    private By totalPrice = By.xpath("//h4[.//b[text()='Total Amount']]/ancestor::tr//p[@class='cart_total_price']");
-    private By placeOrderButton = By.xpath("//a[contains(text(), 'Place Order')]");
+    private final By totalPrice = By.xpath("//h4[.//b[text()='Total Amount']]/ancestor::tr//p[@class='cart_total_price']");
+    private final By placeOrderButton = By.xpath("//a[contains(text(), 'Place Order')]");
 
     public CheckoutPage(WebDriver driver) {
         super(driver);

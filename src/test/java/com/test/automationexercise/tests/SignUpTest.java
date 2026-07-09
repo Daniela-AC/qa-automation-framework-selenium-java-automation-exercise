@@ -2,15 +2,15 @@ package com.test.automationexercise.tests;
 
 import com.test.automationexercise.base.BaseTest;
 import com.test.automationexercise.pages.AccountCreatedPage;
-import com.test.automationexercise.utils.data.TestCredentials;
-import com.test.automationexercise.utils.data.TestDataFactory;
-import com.test.automationexercise.utils.data.UserData;
-import com.test.automationexercise.utils.drivers.DriverFactory;
+import com.test.automationexercise.data.TestCredentials;
+import com.test.automationexercise.data.TestDataFactory;
+import com.test.automationexercise.data.UserData;
+import com.test.automationexercise.drivers.DriverFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import com.test.automationexercise.pages.HomePage;
-import com.test.automationexercise.pages.InformationPage;
+import com.test.automationexercise.pages.SignUpInformationPage;
 import com.test.automationexercise.pages.LoginPage;
 import org.openqa.selenium.WebDriver;
 
@@ -18,7 +18,7 @@ public class SignUpTest extends BaseTest {
 
     HomePage homePage;
     LoginPage login;
-    InformationPage informationPage;
+    SignUpInformationPage informationPage;
     AccountCreatedPage accountCreatedPage;
 
     @BeforeEach
@@ -27,7 +27,7 @@ public class SignUpTest extends BaseTest {
 
         homePage = new HomePage(driver);
         login = new LoginPage(driver);
-        informationPage = new InformationPage(driver);
+        informationPage = new SignUpInformationPage(driver);
         accountCreatedPage = new AccountCreatedPage(driver);
     }
 

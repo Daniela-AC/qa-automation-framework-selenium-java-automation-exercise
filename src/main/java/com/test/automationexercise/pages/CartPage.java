@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 public class CartPage extends BasePage {
 
-    private By proceedToCheckoutButton = By.xpath("//a[contains(text(), 'Checkout')]");
+    private final By proceedToCheckoutButton = By.xpath("//a[contains(text(), 'Checkout')]");
 
     public CartPage(WebDriver driver) {
         super(driver);

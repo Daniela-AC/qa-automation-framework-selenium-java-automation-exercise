@@ -1,4 +1,4 @@
-package com.test.automationexercise.utils.config;
+package com.test.automationexercise.config;
 
 import java.io.InputStream;
 import java.util.Properties;

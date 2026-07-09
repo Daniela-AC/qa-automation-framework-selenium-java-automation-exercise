@@ -1,19 +1,15 @@
 package com.test.automationexercise.pages.base;
 
 import com.test.automationexercise.utils.WaitUtils;
-import com.test.automationexercise.utils.drivers.DriverFactory;
 import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
 import java.util.List;
 
 public class BasePage {
 
-    protected WebDriver driver = DriverFactory.getDriver();
-    protected WaitUtils wait;
+    protected final WebDriver driver;
+    protected final WaitUtils wait;
 
     protected BasePage(WebDriver driver) {
         this.driver = driver;

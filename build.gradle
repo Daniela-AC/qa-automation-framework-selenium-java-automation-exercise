@@ -2,7 +2,7 @@ plugins {
     id 'java'
 }
 
-group = 'co.com.screenplay.project'
+group = 'com.test.automationexercise'
 version = '1.0-SNAPSHOT'
 
 repositories {

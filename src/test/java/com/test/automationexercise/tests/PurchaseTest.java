@@ -2,8 +2,8 @@ package com.test.automationexercise.tests;
 
 import com.test.automationexercise.base.BaseTest;
 import com.test.automationexercise.pages.*;
-import com.test.automationexercise.utils.data.TestCredentials;
-import com.test.automationexercise.utils.drivers.DriverFactory;
+import com.test.automationexercise.data.TestCredentials;
+import com.test.automationexercise.drivers.DriverFactory;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

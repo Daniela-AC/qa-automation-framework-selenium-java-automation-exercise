@@ -6,14 +6,14 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
 
-    private By nameInput = By.xpath("//input[@data-qa='signup-name']");
-    private By emailInput = By.xpath("//input[@data-qa='signup-email']");
-    private By signUpButton = By.xpath("//button[@data-qa='signup-button']");
-    private By emailLoginInput = By.xpath("//input[@data-qa='login-email']");
-    private By passwordInput = By.xpath("//input[@data-qa='login-password']");
-    private By loginButton = By.xpath("//button[@data-qa='login-button']");
-    private By emailExistMessage = By.xpath("//div[@class='signup-form']//p");
-    private By wrongCredentialsMessage = By.xpath("//div[@class='login-form']//p");
+    private final By nameInput = By.xpath("//input[@data-qa='signup-name']");
+    private final By emailInput = By.xpath("//input[@data-qa='signup-email']");
+    private final By signUpButton = By.xpath("//button[@data-qa='signup-button']");
+    private final By emailLoginInput = By.xpath("//input[@data-qa='login-email']");
+    private final By passwordInput = By.xpath("//input[@data-qa='login-password']");
+    private final By loginButton = By.xpath("//button[@data-qa='login-button']");
+    private final By emailExistMessage = By.xpath("//div[@class='signup-form']//p");
+    private final By wrongCredentialsMessage = By.xpath("//div[@class='login-form']//p");
 
     public LoginPage(WebDriver driver) {
         super(driver);
