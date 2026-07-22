@@ -29,3 +29,10 @@ jobs:
 
       - name: Run tests
         run: ./gradlew test -Dheadless=true
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifacts@v4
+        with:
+          name: gradle-test-report
+          path: build/reports/tests/test
