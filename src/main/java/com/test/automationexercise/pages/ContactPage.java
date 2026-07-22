@@ -28,7 +28,7 @@ public class ContactPage extends BasePage {
     }
 
     public void uploadDocument() {
-        String filePath = System.getProperty("user.dir") + "/src/test/resources/files/test_document.txt";
+        String filePath = System.getProperty("user.dir") + "/src/test/resources/testFiles/test_document.txt";
         type(selectFileButton, filePath);
     }
 

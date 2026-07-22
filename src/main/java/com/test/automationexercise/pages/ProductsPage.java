@@ -21,6 +21,7 @@ public class ProductsPage extends BasePage {
 
     public void addProductToTheCart() {
         scrollToElement(blueTopProduct);
+        getProductPrice(productPrice);
         storeProductPrice(blueTopProduct);
         clickElement(addToCartButton);
         clickElement(continueShoppingButton);
