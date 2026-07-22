@@ -29,7 +29,7 @@ public class ConfigReader {
     }
 
     public boolean isHeadless () {
-        return Boolean.parseBoolean(properties.getProperty("headless"));
+        return Boolean.parseBoolean(
+                System.getProperty("headless", properties.getProperty("headless")));
     }
-
 }
