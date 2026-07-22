@@ -20,4 +20,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperty "headless", System.getProperty("headless", "false")
 }
