@@ -4,7 +4,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.test.automationexercise.reports.ExtentManager;
 import com.test.automationexercise.utils.ScreenshotUtils;
-import com.test.automationexercise.reports.TestListener;
+import com.test.automationexercise.listeners.TestListener;
 import com.test.automationexercise.drivers.DriverFactory;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.extension.ExtendWith;

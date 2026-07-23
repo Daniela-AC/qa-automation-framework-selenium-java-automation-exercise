@@ -1,4 +1,4 @@
-package com.test.automationexercise.reports;
+package com.test.automationexercise.listeners;
 
 import com.test.automationexercise.base.BaseTest;
 import org.junit.jupiter.api.extension.ExtensionContext;
